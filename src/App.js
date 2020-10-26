@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import Button from './Components/Button/Button.js';git 
+import Counter from './Components/Counter/Counter.js';
 
 function App() {
   return (
     <>
       <nav></nav>
       <main>
-        <Button label='Klknij mnie' size='medium' />
+        <Counter label='Klknij mnie' size={2} />
       </main>
       <footer></footer>
     </>
