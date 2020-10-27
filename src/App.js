@@ -1,61 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import { getBasicHeroInfoById } from './requests';
+import React from 'react';
 import './App.css';
-import Nav from './Components/Nav/Nav'
+import Nav from './Components/Nav/Nav';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import HeroesFeatures from './Components/HeroesFeatures/HeroesFeatures';
 
-const featuredHeroesIds = [69, 370, 620]
 
-function App() {
-  useEffect(() => {
-    fetchAndRenderFeaturedHeroes();
-  }, []);
-
-  const [featuredHeroesList, setFeaturedHeroesList] = useState([]); 
-
-  const fetchAndRenderFeaturedHeroes = async () => {
-    let heroes = [];
-    for (const heroId of featuredHeroesIds) {
-      const data = await getBasicHeroInfoById(heroId);
-      heroes.push(data); 
-    }
-    console.log(heroes);
-    setFeaturedHeroesList(heroes);
-  }
-
+function App () {
   return (
     <>
-      <Nav></Nav>
-      <main>
-        <section className="featured">
-        {featuredHeroesList.map( ({ name, imgUrl, powerstats }) => 
-        <div className="featured__hero">
-          <h2>{name}</h2>)
-          <img src={imgUrl} alt={`${name}`} />
-          <div className="featured__hero__powerstats">
-            <div>
-              <p>{powerstats.combat}</p>
-            </div>
-            <div>
-              <p>{powerstats.durability}</p>
-            </div>
-            <div>
-              <p>{powerstats.intelligence}</p>
-            </div>
-            <div>
-              <p>{powerstats.speed}</p>
-            </div>
-            <div>
-              <p>{powerstats.strength}</p>
-            </div>
+      <Router>
+        <Nav />
+        <main>
+          <div className="container">
+            <Switch>
+              <Route exact path="/">
+                <HeroesFeatures />
+              </Route>
+              <Route path="">
+              </Route>
+              <Route path="/hero/:id">
+              </Route>
+            </Switch>
           </div>
-        </div>
-        )}
-        </section>
-        
-      </main>
-      <footer></footer>
+        </main>
+        <footer></footer>
+      </Router>
     </>
   );
-}
+}  
 
 export default App;

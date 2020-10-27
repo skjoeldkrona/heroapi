@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;500&display=swap');
+
+body {
+  font-family: 'MuseoModerno', cursive;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 170%;
+}
+
+h2 {
+  font-size: 130%;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+}
