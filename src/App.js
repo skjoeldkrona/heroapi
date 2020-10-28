@@ -27,7 +27,12 @@ function App () {
             </Switch>
           </div>
         </main>
-        <footer></footer>
+        <footer>
+          <div className="container">
+            <p>This content is kindly provided by <a href="https://superheroapi.com/">Superhero API</a></p>
+            <p>Blood, sweat and tears by skjoeldkrona with great thanks to Radek.</p>
+          </div>
+        </footer>
       </Router>
     </>
   );

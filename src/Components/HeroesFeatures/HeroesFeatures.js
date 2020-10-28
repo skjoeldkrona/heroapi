@@ -19,7 +19,7 @@ function HeroesFeatures () {
         const data = await getBasicHeroInfoById(heroId);
         heroes.push(data); 
         }
-        console.log(heroes);
+        
         setFeaturedHeroesList(heroes);
     }
       
