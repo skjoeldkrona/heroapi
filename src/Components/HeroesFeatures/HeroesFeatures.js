@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Loader from '../../Loader/Loader';
 import { getBasicHeroInfoById } from '../../requests';
 import HeroSimplified from '../HeroSimplified/HeroSimplified';
 import './HeroesFeatures.css';
@@ -12,6 +13,7 @@ function HeroesFeatures () {
     }, []);
     
     const [featuredHeroesList, setFeaturedHeroesList] = useState([]); 
+    const [isLoading, setLoadingState] = useState(true); 
     
     const fetchAndRenderFeaturedHeroes = async () => {
         let heroes = [];
@@ -21,14 +23,21 @@ function HeroesFeatures () {
         }
         
         setFeaturedHeroesList(heroes);
+        setLoadingState(false);
     }
       
 
     return (
         <section className="featured">
-          {featuredHeroesList.map(({ name, imgUrl, powerstats }) => (
-          <HeroSimplified name={name} imgUrl={imgUrl} powerstats={powerstats} />        
-          ))}
+            <h1>Featured Heroes</h1>
+            { !isLoading && <div className="featured__list">
+            {featuredHeroesList.map(({ name, imgUrl, powerstats }) => (
+                <HeroSimplified name={name} imgUrl={imgUrl} powerstats={powerstats} />        
+            ))} 
+            </div>}
+            {isLoading && <div className="loader-container">
+                <Loader></Loader>
+            </div>}
         </section>
     );
 }

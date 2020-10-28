@@ -7,6 +7,7 @@ import {
   Route,
 } from 'react-router-dom';
 import HeroesFeatures from './Components/HeroesFeatures/HeroesFeatures';
+import SearchView from './Components/SearchView/SearchView';
 
 
 function App () {
@@ -20,7 +21,8 @@ function App () {
               <Route exact path="/">
                 <HeroesFeatures />
               </Route>
-              <Route path="">
+              <Route path="/search/:name">
+                <SearchView />
               </Route>
               <Route path="/hero/:id">
               </Route>
