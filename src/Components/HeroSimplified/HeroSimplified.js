@@ -9,23 +9,23 @@ function HeroSimplified ({ name, imgUrl, powerstats }) {
       <img className="featured__hero__img" src={imgUrl} alt={`${name}`} />
       <div className="featured__hero__stats">
         <div>
-          <img className="featured__hero__stats__icon" src={icon.combat} alt="icon" />
+          <img className="featured__hero__stats__icon" src={icon.combat.default} alt="icon" />
           <p>{powerstats.combat}</p>
         </div>
         <div>
-          <img className="featured__hero__stats__icon" src={icon.durability} alt="icon" />
+          <img className="featured__hero__stats__icon" src={icon.durability.default} alt="icon" />
           <p>{powerstats.durability}</p>
         </div>
         <div>
-          <img className="featured__hero__stats__icon" src={icon.intelligence} alt="icon" />
+          <img className="featured__hero__stats__icon" src={icon.intelligence.default} alt="icon" />
           <p>{powerstats.intelligence}</p>
         </div>
         <div>
-          <img className="featured__hero__stats__icon" src={icon.speed} alt="icon" />
+          <img className="featured__hero__stats__icon" src={icon.speed.default} alt="icon" />
           <p>{powerstats.speed}</p>
         </div>
         <div>
-          <img className="featured__hero__stats__icon" src={icon.strength} alt="icon" />
+          <img className="featured__hero__stats__icon" src={icon.strength.default} alt="icon" />
           <p>{powerstats.strength}</p>
         </div>
       </div>
